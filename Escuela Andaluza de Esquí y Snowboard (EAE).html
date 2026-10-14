@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Escuela Andaluza de Esquí y Snowboard (EAE) · Clases y Alquiler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--snow:#F6FAFD;--card:#fff;--ice:#CFE8F7;--ice2:#E5F2FB;--deep:#0D2B4A;--ink:#12283F;--mute:#52677D;--or:#FF6B14;--lime:#C4F000;--line:#D5E4F0;--hero1:#0D2B4A;--hero2:#2F78AE;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--snow:#0A1827;--card:#112437;--ice:#1D3E5C;--ice2:#15304A;--deep:#E8F4FC;--ink:#E3EEF7;--mute:#9DB3C7;--line:#244560;color-scheme:dark}}
+:root[data-theme="dark"]{--snow:#0A1827;--card:#112437;--ice:#1D3E5C;--ice2:#15304A;--deep:#E8F4FC;--ink:#E3EEF7;--mute:#9DB3C7;--line:#244560;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--snow);color:var(--ink);font:16px/1.55 Barlow,system-ui,sans-serif}
+h1,h2,h3{font-family:'Barlow Condensed','Arial Narrow',sans-serif;color:var(--deep);line-height:1;margin:0}
+h2{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.01em}
+h3{font-size:24px;font-weight:700}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.lead{color:var(--mute);max-width:60ch;margin:12px 0 28px}
+header{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.logo{font:800 26px 'Barlow Condensed',sans-serif;color:var(--deep);display:flex;gap:8px;align-items:center}
+nav{display:flex;gap:22px;margin-left:auto;font-weight:600}
+nav a:hover{color:var(--or)}
+.btn{border:0;border-radius:10px;padding:12px 20px;font:700 16px Barlow,sans-serif;cursor:pointer;background:var(--or);color:#1a0a00;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:var(--ice);color:var(--deep)}
+.btn.lime{background:var(--lime);color:#1b2600}
+.btn.sm{padding:9px 14px;font-size:15px}
+.cartbtn{position:relative}
+.badge{background:var(--deep);color:var(--snow);border-radius:20px;padding:0 7px;margin-left:6px;font-size:13px}
+@media(max-width:820px){nav{display:none}.cartbtn{margin-left:auto}.logo small{display:none}}
+.hero{background:linear-gradient(180deg,var(--hero1),var(--hero2) 70%,#9CCBEA);color:#fff;padding:72px 0 0;position:relative;overflow:hidden}
+.hero h1{color:#fff;font-size:clamp(48px,9vw,112px);font-weight:800;text-transform:none;max-width:12ch}
+.hero p{font-size:19px;max-width:48ch;color:#DCEBF6;margin:20px 0 0}
+.hero svg.m{display:block;width:100%;height:auto;margin-top:-40px}
+.hbook{background:var(--card);color:var(--ink);border-radius:16px;padding:16px;display:grid;grid-template-columns:repeat(4,1fr) auto;gap:12px;align-items:end;margin-top:32px;position:relative;z-index:2;box-shadow:0 12px 40px #0006}
+@media(max-width:820px){.hbook{grid-template-columns:1fr 1fr}.hbook .btn{grid-column:1/-1}}
+label{display:grid;gap:4px;font-size:14px;font-weight:600;color:var(--mute)}
+input,select{font:16px Barlow,sans-serif;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--snow);color:var(--ink);width:100%}
+.seg{display:inline-flex;background:var(--ice2);border-radius:12px;padding:4px;margin-bottom:24px}
+.seg button{border:0;background:none;padding:10px 22px;border-radius:9px;font:700 17px Barlow,sans-serif;color:var(--mute);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--deep);color:var(--snow)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card .body{padding:18px;display:grid;gap:12px;flex:1;align-content:start}
+.img{height:150px;display:grid;place-items:center;background:linear-gradient(135deg,var(--ice),var(--ice2))}
+.price{font:800 36px 'Barlow Condensed',sans-serif;color:var(--deep)}
+.price small{font:500 15px Barlow;color:var(--mute)}
+.tier{font-weight:700;font-size:14px;padding:3px 10px;border-radius:20px;background:var(--lime);color:#1b2600;width:fit-content}
+.tier.m{background:var(--ice);color:var(--deep)}.tier.b{background:var(--ice2);color:var(--mute)}
+.extras{display:flex;flex-wrap:wrap;gap:8px}
+.extras label{display:flex;gap:6px;align-items:center;font-size:14px;color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:5px 10px;cursor:pointer}
+.extras input{width:auto}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.filters{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.filters label{min-width:170px}
+.av{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;font:800 28px 'Barlow Condensed';color:#fff}
+.ih{display:flex;gap:14px;align-items:center}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:13px;font-weight:600;padding:2px 9px;border-radius:20px;background:var(--ice2);color:var(--deep)}
+.rates{background:var(--deep);color:var(--snow)}
+.rates h2{color:var(--snow)}
+.rates .lead{color:#B9CFE2}
+.rt{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.rt div{border:1px solid #ffffff33;border-radius:14px;padding:18px}
+.rt b{font:800 40px 'Barlow Condensed';color:var(--lime);display:block}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.q{border-left:4px solid var(--or);padding:4px 0 4px 16px}
+.seals{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px}
+.seals span{border:2px solid var(--deep);border-radius:10px;padding:8px 14px;font:700 17px 'Barlow Condensed';color:var(--deep)}
+footer{background:#08182B;color:#B9CFE2;padding:48px 0 32px}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+footer h3{color:#fff;font-size:20px;margin-bottom:8px}footer a{display:block;padding:2px 0}footer a:hover{color:var(--lime)}
+dialog{border:0;border-radius:16px;padding:0;max-width:520px;width:calc(100% - 24px);background:var(--card);color:var(--ink)}
+dialog::backdrop{background:#0008}
+.dlg{padding:22px;display:grid;gap:14px}
+.line{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:8px 0;font-size:15px}
+.line button{border:0;background:none;color:var(--or);cursor:pointer;font-weight:700}
+.tot{font:800 32px 'Barlow Condensed';display:flex;justify-content:space-between}
+.pay{display:flex;gap:8px}.pay label{flex:1;display:flex;gap:6px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px;color:var(--ink);cursor:pointer}.pay input{width:auto}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--deep);color:var(--snow);padding:12px 20px;border-radius:10px;z-index:50;font-weight:600}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a class="logo" href="#inicio"><svg width="30" height="26" viewBox="0 0 30 26" aria-hidden="true"><path d="M0 26 11 5l5 9 4-6 10 18z" fill="var(--or)"/></svg>EAE<small style="font:600 12px/1.15 Barlow,sans-serif;max-width:12ch;color:var(--mute)">Escuela Andaluza de Esquí y Snowboard</small></a>
+ <nav aria-label="Principal"><a href="#inicio">Inicio</a><a href="#clases">Clases / Profesores</a><a href="#alquiler">Alquiler de Equipo</a><a href="#tarifas">Tarifas</a><a href="#contacto">Contacto</a></nav>
+ <button class="btn ghost cartbtn" id="openCart">Mi reserva<span class="badge" id="count">0</span></button>
+ <a class="btn" href="#clases" style="white-space:nowrap">Reserva Ahora</a>
+</div></header>
+
+<main>
+<div class="hero" id="inicio"><div class="wrap">
+ <h1>Tu primera bajada empieza aquí</h1>
+ <p>Escuela de esquí y snowboard con monitores titulados y material de temporada. Reserva clase y equipo en un solo pago.</p>
+ <form class="hbook" id="hform">
+  <label>Disciplina<select id="hd"><option>Esquí</option><option>Snowboard</option></select></label>
+  <label>Llegada<input type="date" id="hf"></label>
+  <label>Salida<input type="date" id="ht"></label>
+  <label>Personas<select id="hp"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+  <button class="btn lime" type="submit">Ver equipo y clases</button>
+ </form>
+ <svg class="m" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true"><path d="M0 220V150l160-90 120 80 180-120 200 150 150-100 220 130 170-80v170z" fill="#E5F2FB"/><path d="M0 220v-40l200-60 140 50 220-90 200 100 160-60 280 70v30z" fill="var(--snow)"/></svg>
+</div></div>
+
+<section id="alquiler"><div class="wrap">
+ <h2>Alquiler de material</h2>
+ <p class="lead">Elige disciplina, gama y fechas. Precio por día, con extras opcionales.</p>
+ <div class="seg" role="group" aria-label="Disciplina"><button aria-pressed="true" data-d="Esquí">Esquí</button><button aria-pressed="false" data-d="Snowboard">Snowboard</button></div>
+ <div class="grid" id="rentals"></div>
+</div></section>
+
+<section id="clases" style="background:var(--ice2)"><div class="wrap">
+ <h2>Clases con nuestros 10 profesores</h2>
+ <p class="lead">Filtra por disciplina, idioma y nivel. Clase de 1 hora, hasta 4 personas.</p>
+ <div class="filters">
+  <label>Disciplina<select id="fd"><option>Todas</option><option>Esquí</option><option>Snowboard</option></select></label>
+  <label>Idioma<select id="fl"><option>Todos</option><option>Español</option><option>Inglés</option><option>Francés</option><option>Alemán</option><option>Italiano</option><option>Catalán</option><option>Portugués</option></select></label>
+  <label>Nivel<select id="fn"><option>Todos</option><option>Iniciación</option><option>Perfeccionamiento</option><option>Fuera de pista</option><option>Freestyle</option></select></label>
+ </div>
+ <div class="grid" id="teachers"></div>
+ <p id="none" class="lead" hidden>Ningún profesor coincide. Prueba a quitar un filtro.</p>
+</div></section>
+
+<section id="tarifas" class="rates"><div class="wrap">
+ <h2>Tarifas</h2>
+ <p class="lead">Precios por día de alquiler y por hora de clase. IVA incluido.</p>
+ <div class="rt">
+  <div>Gama Alta<b>24 €/día</b>Premium / Pro</div>
+  <div>Gama Media<b>20 €/día</b>Evolution / Confort</div>
+  <div>Gama Baja<b>18 €/día</b>Iniciación / Basic</div>
+  <div>Clase con profesor<b>45 €/hora</b>Hasta 4 personas</div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <h2>Monitores titulados, clientes que repiten</h2>
+ <p class="lead" style="margin-bottom:20px">Todo nuestro equipo cuenta con titulación oficial y primeros auxilios en montaña.</p>
+ <div class="seals"><span>Federación de Deportes de Invierno</span><span>Técnico Deportivo TD1–TD3</span><span>Seguro RC incluido</span></div>
+ <div class="quotes">
+  <div class="q">“Mi hija de 5 años perdió el miedo en dos clases. Sofía es paciente y muy divertida.”<br><b>Marta P., Madrid</b></div>
+  <div class="q">“Marc nos llevó a una ladera virgen con total seguridad. El material premium, impecable.”<br><b>Tom H., Berlín</b></div>
+  <div class="q">“Reservé clase y botas desde el móvil y recogí todo con el QR en dos minutos.”<br><b>Aleix R., Barcelona</b></div>
+ </div>
+</div></section>
+</main>
+
+<footer id="contacto"><div class="wrap">
+ <div><h3>Escuela Andaluza de Esquí y Snowboard (EAE)</h3>Clases y alquiler de esquí y snowboard.<br>info@eae.example · +34 900 000 000</div>
+ <div><h3>Información</h3><a href="#">Aviso legal y privacidad</a><a href="#">Condiciones de reserva</a><a href="#">Política de cancelación</a></div>
+ <div><h3>En pistas hoy</h3>Nieve: 85 cm base · Cielo despejado · −4 °C<br><small>Datos de ejemplo: conecta tu API meteorológica.</small></div>
+ <div><h3>Síguenos</h3><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">TikTok</a></div>
+</div></footer>
+
+<dialog id="cart"><div class="dlg" id="cartBody"></div></dialog>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ---- Datos (sustituir por llamadas a tu API) ---- */
+const EXTRAS={Casco:4,Botas:6,Bastones:3}, CLASS_PRICE=45;
+const GAMAS=[
+ {id:'alta',n:'Gama Alta',s:'Premium / Pro',p:24,c:'',d:'Material de última temporada de marcas punteras (Salomon, Burton, Rossignol). Para nivel avanzado o experto: máxima reactividad, carving preciso o freestyle/freeride exigente.',col:'#FF6B14'},
+ {id:'media',n:'Gama Media',s:'Evolution / Confort',p:20,c:'m',d:'Material versátil, equilibrado y maniobrable. Ideal para nivel intermedio que quiere progresar con seguridad en cualquier tipo de pista.',col:'#2F78AE'},
+ {id:'baja',n:'Gama Baja',s:'Iniciación / Basic',p:18,c:'b',d:'Equipo tolerante al error, flexible y ligero. Pensado para principiantes y para quien pisa la nieve por primera vez.',col:'#7FB9DD'}];
+const PROFS=[
+ ['Lucas Mendoza','Esquí alpino y competición (nivel TD3)',['Esquí'],['Español','Inglés'],['Perfeccionamiento']],
+ ['Elena Valls','Snowboard freestyle y snowpark',['Snowboard'],['Español','Francés'],['Freestyle']],
+ ['Marc Santamaría','Guía de freeride y fuera de pista',['Esquí'],['Español','Inglés','Alemán'],['Fuera de pista']],
+ ['Sofía Carrión','Iniciación infantil y pedagogía familiar',['Esquí','Snowboard'],['Español','Catalán','Inglés'],['Iniciación']],
+ ['Javier Ortiz','Esquí alpino y corrección postural con análisis en vídeo',['Esquí'],['Español','Francés'],['Perfeccionamiento']],
+ ['Clara Benítez','Snowboard técnico y carving',['Snowboard'],['Español','Inglés'],['Perfeccionamiento']],
+ ['Mateo Rossi','Esquí nórdico y alpino para todas las edades',['Esquí'],['Español','Italiano','Inglés'],['Iniciación','Perfeccionamiento']],
+ ['Nuria Garrido','Iniciación al snowboard para adultos, método sin caídas',['Snowboard'],['Español','Portugués'],['Iniciación']],
+ ['Daniel Rovira','Excorredor de slalom: tecnificación y alta velocidad',['Esquí'],['Español','Inglés'],['Perfeccionamiento']],
+ ['Ariadna Soler','Grupos reducidos y personas con miedo a la pendiente',['Esquí','Snowboard'],['Español','Inglés'],['Iniciación']]];
+const HUES=['#2F78AE','#FF6B14','#1D8F6E','#7B5EA7','#C0392B','#0E7C9B','#B7791F','#3B6FD4','#2C8C3F','#D1507A'];
+const cart=[]; let disc='Esquí';
+const $=s=>document.querySelector(s), eur=n=>n.toFixed(2).replace('.',',')+' €';
+const today=new Date().toISOString().slice(0,10);
+function toast(t){const e=$('#toast');e.textContent=t;e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>e.hidden=true,2200)}
+
+/* ---- Alquiler ---- */
+function gear(col,snow){return snow?`<svg width="150" height="120" viewBox="0 0 150 120" aria-hidden="true"><rect x="62" y="6" width="26" height="108" rx="13" fill="${col}"/><rect x="58" y="44" width="34" height="8" rx="3" fill="#0D2B4A"/><rect x="58" y="68" width="34" height="8" rx="3" fill="#0D2B4A"/></svg>`:`<svg width="150" height="120" viewBox="0 0 150 120" aria-hidden="true"><rect x="52" y="6" width="12" height="108" rx="6" fill="${col}" transform="rotate(8 58 60)"/><rect x="86" y="6" width="12" height="108" rx="6" fill="${col}" transform="rotate(8 92 60)"/></svg>`}
+function renderRentals(){
+ $('#rentals').innerHTML=GAMAS.map(g=>`<article class="card" data-g="${g.id}"><div class="img">${gear(g.col,disc==='Snowboard')}</div><div class="body">
+ <span class="tier ${g.c}">${g.s}</span><h3>${g.n} · ${disc}</h3><div class="price">${g.p} €<small> / día</small></div><p style="margin:0;color:var(--mute)">${g.d}</p>
+ <div class="extras">${Object.entries(EXTRAS).map(([k,v])=>`<label><input type="checkbox" value="${k}">${k} +${v} €</label>`).join('')}</div>
+ <div class="two"><label>Desde<input type="date" class="rf" min="${today}" value="${$('#hf').value}"></label><label>Hasta<input type="date" class="rt2" min="${today}" value="${$('#ht').value}"></label></div>
+ <label>Personas<select class="rp">${[1,2,3,4,5,6].map(n=>`<option ${n==$('#hp').value?'selected':''}>${n}</option>`).join('')}</select></label>
+ <button class="btn" data-add="${g.id}">Añadir a mi reserva</button></div></article>`).join('')}
+document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{disc=b.dataset.d;document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderRentals()});
+$('#rentals').onclick=e=>{const id=e.target.dataset.add;if(!id)return;
+ const c=e.target.closest('.card'),g=GAMAS.find(x=>x.id===id),f=c.querySelector('.rf').value,t=c.querySelector('.rt2').value||f;
+ if(!f)return toast('Elige la fecha de alquiler');
+ if(t<f)return toast('La fecha final no puede ser anterior');
+ const days=Math.round((new Date(t)-new Date(f))/864e5)+1,n=+c.querySelector('.rp').value;
+ const ex=[...c.querySelectorAll('input:checked')].map(i=>i.value),exp=ex.reduce((s,k)=>s+EXTRAS[k],0);
+ cart.push({t:`${g.n} ${disc}${ex.length?' + '+ex.join(', '):''}`,d:`${f} → ${t} · ${days} d · ${n} pers.`,p:(g.p+exp)*days*n,k:'r'});upd();toast('Añadido a tu reserva')}
+
+/* ---- Profesores ---- */
+function renderTeachers(){
+ const d=$('#fd').value,l=$('#fl').value,n=$('#fn').value;
+ const list=PROFS.map((p,i)=>({p,i})).filter(({p})=>(d==='Todas'||p[2].includes(d))&&(l==='Todos'||p[3].includes(l))&&(n==='Todos'||p[4].includes(n)));
+ $('#none').hidden=list.length>0;
+ $('#teachers').innerHTML=list.map(({p,i})=>`<article class="card"><div class="body">
+ <div class="ih"><div class="av" style="background:${HUES[i]}" aria-hidden="true">${p[0].split(' ').map(w=>w[0]).join('')}</div><div><h3>${p[0]}</h3><div class="chips">${p[2].map(x=>`<span class="chip">${x}</span>`).join('')}</div></div></div>
+ <p style="margin:0">${p[1]}.</p><div class="chips">${p[3].map(x=>`<span class="chip">${x}</span>`).join('')}${p[4].map(x=>`<span class="chip" style="background:var(--lime);color:#1b2600">${x}</span>`).join('')}</div>
+ <div class="two"><label>Fecha<input type="date" min="${today}" class="cd"></label><label>Hora<select class="ch">${['09:00','10:00','11:00','12:00','15:00','16:00'].map(h=>`<option>${h}</option>`).join('')}</select></label></div>
+ <label>Participantes<select class="cp">${[1,2,3,4].map(n=>`<option>${n}</option>`).join('')}</select></label>
+ <button class="btn" data-t="${i}">Reservar · ${CLASS_PRICE} €/h</button></div></article>`).join('')}
+['#fd','#fl','#fn'].forEach(s=>$(s).onchange=renderTeachers);
+$('#teachers').onclick=e=>{const i=e.target.dataset.t;if(i==null)return;const c=e.target.closest('.card'),f=c.querySelector('.cd').value;
+ if(!f)return toast('Elige la fecha de la clase');
+ cart.push({t:`Clase con ${PROFS[i][0]}`,d:`${f} · ${c.querySelector('.ch').value} · ${c.querySelector('.cp').value} pers.`,p:CLASS_PRICE,k:'c'});upd();toast('Clase añadida a tu reserva')}
+
+/* ---- Hero ---- */
+$('#hf').min=$('#ht').min=today;
+$('#hform').onsubmit=e=>{e.preventDefault();disc=$('#hd').value;document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.d===disc));renderRentals();location.hash='#alquiler'};
+
+/* ---- Carrito y checkout ---- */
+function upd(){$('#count').textContent=cart.length;if($('#cart').open)drawCart()}
+function drawCart(){
+ const tot=cart.reduce((s,i)=>s+i.p,0);
+ $('#cartBody').innerHTML=`<h3>Mi reserva</h3>`+(cart.length?cart.map((i,x)=>`<div class="line"><div><b>${i.t}</b><br><small>${i.d}</small></div><div>${eur(i.p)}<br><button data-rm="${x}">Quitar</button></div></div>`).join('')+
+ `<div class="tot"><span>Total</span><span>${eur(tot)}</span></div>
+ <label>Email de confirmación<input type="email" id="em" placeholder="tu@email.com" required></label>
+ <div class="pay" role="radiogroup" aria-label="Método de pago"><label><input type="radio" name="pm" value="Stripe" checked>Tarjeta (Stripe)</label><label><input type="radio" name="pm" value="PayPal">PayPal</label><label><input type="radio" name="pm" value="Apple Pay">Apple Pay</label></div>
+ <button class="btn" id="pay">Pagar ${eur(tot)}</button>`:`<p>Tu reserva está vacía. Añade una clase o un equipo para empezar.</p>`)+`<button class="btn ghost" id="close">Seguir mirando</button>`}
+$('#openCart').onclick=()=>{drawCart();$('#cart').showModal()};
+$('#cartBody').onclick=e=>{
+ if(e.target.dataset.rm!=null){cart.splice(+e.target.dataset.rm,1);upd()}
+ if(e.target.id==='close')$('#cart').close();
+ if(e.target.id==='pay'){const em=$('#em').value;if(!/\S+@\S+\.\S+/.test(em))return toast('Escribe un email válido');
+  /* TODO backend: POST /api/checkout → Stripe PaymentIntent / PayPal order / Apple Pay session */
+  const code='CB-'+Math.random().toString(36).slice(2,8).toUpperCase(),m=$('input[name=pm]:checked').value;
+  $('#cartBody').innerHTML=`<h3>Reserva confirmada</h3><p>Pago con ${m} correcto. Hemos enviado la confirmación a <b>${em}</b>.</p>${qr(code)}<p style="text-align:center;margin:0"><b>${code}</b></p>
+  ${cart.some(i=>i.k==='r')?'<p style="margin:0">Recogida de material: caseta de alquiler, base de pistas. Muestra el QR.</p>':''}${cart.some(i=>i.k==='c')?'<p style="margin:0">Punto de encuentro con tu profesor: banderín naranja, 10 min antes de la clase.</p>':''}<button class="btn" id="close">Cerrar</button>`;cart.length=0;$('#count').textContent=0}};
+/* QR de demostración (patrón visual). En producción genera el QR real en el servidor con el código de reserva. */
+function qr(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))>>>0;let r='';const N=21,f=(x,y)=>(x<7&&y<7)||(x>13&&y<7)||(x<7&&y>13);
+ for(let y=0;y<N;y++)for(let x=0;x<N;x++){let on;if(f(x,y)){const a=x%14,b=y%14;on=!(a%6>0&&a%6<6&&b>0&&b<6&&(a<1||a>5||b<1||b>5)?false:(a==0||a==6||b==0||b==6||(a>1&&a<5&&b>1&&b<5)))?false:true}else{h=(h*1103515245+12345)>>>0;on=(h>>16)&1}
+  if(on)r+=`<rect x="${x}" y="${y}" width="1" height="1"/>`}
+ return `<svg viewBox="-1 -1 23 23" width="150" style="display:block;margin:auto;background:#fff;padding:4px;border-radius:8px" fill="#0D2B4A" role="img" aria-label="Código QR de recogida">${r}</svg>`}
+
+renderRentals();renderTeachers();
+</script>
+</body>
+</html>
