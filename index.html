@@ -34,7 +34,8 @@ nav a:hover{color:var(--or)}
 .btn.sm{padding:9px 14px;font-size:15px}
 .cartbtn{position:relative}
 .badge{background:var(--deep);color:var(--snow);border-radius:20px;padding:0 7px;margin-left:6px;font-size:13px}
-@media(max-width:820px){nav{display:none}.cartbtn{margin-left:auto}.logo small{display:none}}
+@media(max-width:820px){nav{display:none}.tienda{margin-left:auto}.logo small{display:none}}
+@media(max-width:520px){header .wrap{gap:8px}.logo{font-size:0}.btn{padding:9px 10px;font-size:14px}}
 .hero{background:linear-gradient(180deg,var(--hero1),var(--hero2) 70%,#9CCBEA);color:#fff;padding:72px 0 0;position:relative;overflow:hidden}
 .hero h1{color:#fff;font-size:clamp(48px,9vw,112px);font-weight:800;text-transform:none;max-width:12ch}
 .hero p{font-size:19px;max-width:48ch;color:#DCEBF6;margin:20px 0 0}
@@ -89,9 +90,11 @@ dialog::backdrop{background:#0008}
 </style>
 </head>
 <body>
+<div style="background:#0D2B4A;color:#fff;text-align:center;font:600 13px Barlow,sans-serif;padding:6px 12px">Trabajo de clase · Proyecto académico sin fines comerciales</div>
 <header><div class="wrap">
  <a class="logo" href="#inicio"><svg width="30" height="26" viewBox="0 0 30 26" aria-hidden="true"><path d="M0 26 11 5l5 9 4-6 10 18z" fill="var(--or)"/></svg>EAE<small style="font:600 12px/1.15 Barlow,sans-serif;max-width:12ch;color:var(--mute)">Escuela Andaluza de Esquí y Snowboard</small></a>
  <nav aria-label="Principal"><a href="#inicio">Inicio</a><a href="#clases">Clases / Profesores</a><a href="#alquiler">Alquiler de Equipo</a><a href="#tarifas">Tarifas</a><a href="#contacto">Contacto</a></nav>
+ <a class="btn ghost tienda" href="https://claude.ai/artifact/R58Y9A95wuqM5L997KhEmm">Tienda</a>
  <button class="btn ghost cartbtn" id="openCart">Mi reserva<span class="badge" id="count">0</span></button>
  <a class="btn" href="#clases" style="white-space:nowrap">Reserva Ahora</a>
 </div></header>
